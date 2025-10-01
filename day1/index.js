@@ -1,13 +1,10 @@
+let people =["aditya","rohit","shubham"];
 
-const readline =require("readline");
-function main (){
+people.push("adityayayaya");
 
-
-    for(let i =0 ;i<=1000;i++){
-        console.log(i);
-        
-    }
-
+for (let i=0;i<people.length;i++){
+    console.log(people[i])
 }
 
-main()
+
+
