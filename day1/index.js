@@ -1,10 +1,10 @@
-let people =["aditya","rohit","shubham"];
+let people ={
+    name:["aditya","rohit","payal"],
+    age:[12,21,22]
+};
 
-people.push("adityayayaya");
+for(let i =0;i<people.name.length;i++){
 
-for (let i=0;i<people.length;i++){
-    console.log(people[i])
+    console.log(`dear ${people.name[i]} your age is ${people.age[i]} `)
 }
-
-
 
