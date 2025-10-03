@@ -1,45 +1,29 @@
-const express  = require ('express');
-const app =express();
+const express = require('express');
+
+const app = express();
 
 
-function uservalidation(req,res,next){
-    const username = req.headers.username;
-    const password= req.headers.password;
-        if(username!='Aditya' || password !='pass' ){
-        res.status(400).json({
-            message:"Wrong credentials"
-        })
+app.use(express.json());
+app.get("/" , (req , res)=>{
+    const kidney = req.body.kidney;
+    const kideylength =kidney.length;
+
+
+    if(!kidney){
+        res.json(`enter your kidney`);
         return;
     }
     else{
-        next()
+
+        res.send(`<h1>Your kidney is ${kidney} and your kidney length is ${kideylength}</h1>`);
     }
 
-   
-}
+}); 
 
-
-function keydneyvalidation(req,res,next){
-
-    const kedneyid=req.query.kedneyid;
-     if(kedneyid != 1 && kedneyid != 2){
-        res.status(401).json({
-            message:"wrong input "
-        })
-        return;
-    }
-    else{
-        next()
-    }
-}
-
-
-app.get("/health",uservalidation,keydneyvalidation,(req,res)=>{
-
-res.status(200).json({
-    message:"checked and confirmed"
+app.use(function(err,req , res , next){
+res.json({
+    message:"something hell up with the server , please try again later"
 })
 });
-
 
 app.listen(3000);
