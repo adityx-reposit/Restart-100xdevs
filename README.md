@@ -1,2 +1,2 @@
-restarted the web2 jouney 
-all the changes will be reflected here 
+day 1 no update december 
+dec 1- no update
